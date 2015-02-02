@@ -5,6 +5,7 @@
 
 \newcommand{\subgroupeq}{\le}
 \newcommand{\nsubgroupeq}{\trianglelefteq}
+\newcommand{\lsemidirect}{\rtimes}
 
 % Theorems
 \theoremstyle{definition}
@@ -47,6 +48,11 @@ Let \(G\)~be a finite group, \(P\)~a Sylow \(p\)-subgroup of~\(G\), and \(N_G(P)
 \begin{proof}
 Note \(N_G(H)\)~is finite, \(H\nsubgroupeq N_G(H)\), and \(P\)~is a Sylow \(p\)-subgroup of~\(H\), so \(N_G(H)=HN_{N_G(H)}(P)\subseteq HN_G(P)\subseteq HH=H\) by Frattini.
 \end{proof}
+
+\subsection*{Section~9}
+\begin{rmk}
+In the proof of Lemma~9.11, \(G=N\lsemidirect A=N\lsemidirect B\) (Proposition~11.2). In particular, each \(b\in B\) can be expressed uniquely in~\(N\lsemidirect A\) in the form \(b=ua\) with \(u\in N\) and \(a\in A\). Then \(u=u_a\) in Grillet's notation, and \(u_{aa'}=u_a(au_{a'}a^{-1})\) follows from the multiplication rule in~\(N\lsemidirect A\). In this way, \(N\)~acts as a ``bridge'' between \(A\)~and~\(B\).
+\end{rmk}
 
 % References
 \begin{thebibliography}{0}
