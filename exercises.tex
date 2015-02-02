@@ -3,6 +3,20 @@
 \documentclass[letterpaper,12pt]{article}
 \usepackage{amsmath,amssymb,amsthm,enumitem,diagrams,fourier}
 
+\newcommand{\subgroupeq}{\le}
+\newcommand{\nsubgroupeq}{\trianglelefteq}
+
+% Theorems
+\theoremstyle{definition}
+\newtheorem*{exer}{Exercise}
+
+\theoremstyle{remark}
+\newtheorem*{rmk}{Remark}
+
+\theoremstyle{plain}
+\newtheorem*{prop}{Proposition}
+\newtheorem*{cor}{Corollary}
+
 % Meta
 \title{Notes and exercises from \textit{Abstract Algebra}}
 \author{John Peloquin}
@@ -12,7 +26,27 @@
 \maketitle
 
 \section*{Introduction}
-This document contains notes and exercises from~\cite{grillet}. 
+This document contains notes and exercises from~\cite{grillet}.
+
+\section*{Chapter~II}
+\subsection*{Section~5}
+
+The argument used in the proof of Proposition~5.10 is essentially Frattini's:
+\begin{prop}[Frattini]
+Let \(G\)~be a finite group, \(H\nsubgroupeq G\), and \(P\)~a Sylow \(p\)-subgroup of~\(H\). Then \(G=HN_G(P)\).
+\end{prop}
+\begin{proof}
+If \(g\in G\), then \(gPg^{-1}\subseteq gHg^{-1}=H\) since \(P\subseteq H\nsubgroupeq G\). But \(gPg^{-1}\)~is also a Sylow \(p\)-subgroup of~\(H\), and all Sylow \(p\)-subgroups of~\(H\) are conjugate in~\(H\) (Theorem~5.7), so there is \(h\in H\) with
+\[hgP(hg)^{-1}=h(gPg^{-1})h^{-1}=P\]
+Therefore \(hg\in N_G(P)\), \(g\in HN_G(P)\), and \(G=HN_G(P)\).
+\end{proof}
+\noindent The key observation is that since all conjugates of~\(P\) in~\(G\) are contained in~\(H\), they are also conjugate in~\(H\). Proposition~5.10 follows as a corollary:
+\begin{cor}
+Let \(G\)~be a finite group, \(P\)~a Sylow \(p\)-subgroup of~\(G\), and \(N_G(P)\subseteq H\subgroupeq G\). Then \(N_G(H)=H\).
+\end{cor}
+\begin{proof}
+Note \(N_G(H)\)~is finite, \(H\nsubgroupeq N_G(H)\), and \(P\)~is a Sylow \(p\)-subgroup of~\(H\), so \(N_G(H)=HN_{N_G(H)}(P)\subseteq HN_G(P)\subseteq HH=H\) by Frattini.
+\end{proof}
 
 % References
 \begin{thebibliography}{0}
