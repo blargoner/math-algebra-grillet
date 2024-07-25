@@ -6,11 +6,17 @@
 \newcommand{\subgroupeq}{\le}
 \newcommand{\nsubgroupeq}{\trianglelefteq}
 \newcommand{\lsemidirect}{\rtimes}
+\newcommand{\divides}{|}
 
 \newcommand{\after}{\circ}
 
+\newcommand{\ac}{\overline}
+
+\DeclareMathOperator{\Irr}{Irr}
+
 % Theorems
 \theoremstyle{definition}
+\newtheorem*{defn}{Definition}
 \newtheorem*{exer}{Exercise}
 
 \theoremstyle{remark}
@@ -83,6 +89,57 @@ By the universal mapping property for quotient groups (Theorem~I.5.1), since \(K
 \begin{rmk}
 In Proposition~5.1(2), if \(K\)~is finite then \(m=0\) and \(q\)~is separable.
 \end{rmk}
+
+\subsection*{Section~6}
+We sketch an alternative approach to purely inseparable extensions starting with polynomials having only one distinct root:
+\begin{defn}
+A nonconstant polynomial \(f(X)\in K[X]\) is \emph{purely inseparable} if
+\[f(X)=a(X-\alpha)^m\in\ac{K}[X]\]
+where \(a\in K\), \(\alpha\in\ac{K}\), and \(m>0\).
+\end{defn}
+\noindent Note \(f\)~is both separable and purely inseparable if and only if \(f\)~is linear.
+
+\begin{prop}
+Let \(f(X)=a(X-\alpha)^m\in K[X]\) be purely inseparable as above.
+\begin{enumerate}
+\item If \(K\)~has characteristic~\(0\), then \(\alpha\in K\).
+\item If \(K\)~has characteristic \(p\ne 0\), then \(\alpha^{p^k}\in K\) for some \(k\ge 0\) with
+\[f(X)=a\bigl(X^{p^k}-\alpha^{p^k}\bigr)^{m/p^k}\]
+\end{enumerate}
+\end{prop}
+\begin{proof}
+By the binomial theorem,
+\[f(X)=a(X-\alpha)^m=aX^m-am\alpha X^{m-1}+\cdots\ \in K[X]\]
+so \(am\alpha\in K\) and \(m\alpha\in K\) since \(a\ne 0\). If \(K\)~has characteristic~\(0\), then \(m\ne 0\) in~\(K\) and \(\alpha\in K\). If \(K\)~has characteristic \(p\ne 0\), then either \(\alpha\in K\) or else \(p\divides m\) and
+\[f(X)=a\bigl((X-\alpha)^p\bigr)^{m/p}=a\bigl(X^p-\alpha^p\bigr)^{m/p}\]
+Repeating this argument with \(\alpha^p\)~in place of~\(\alpha\), we must eventually find \(k\ge 0\) with \(\alpha^{p^k}\in K\) and \(f(X)\)~as claimed.
+\end{proof}
+
+\begin{prop}
+Let \(q(X)\in K[X]\) be monic irreducible and purely inseparable. If \(K\)~has characteristic~\(0\), then \(q(X)=X-a\) for some \(a\in K\). If \(K\)~has characteristic \(p\ne 0\), then \(q(X)=X^{p^k}-a\) for some \(a\in K\) and \(k\ge 0\).
+\end{prop}
+\begin{proof}
+By Proposition~5.1 and the above. In the case of characteristic \(p\ne 0\), \(q(X)=s(X^{p^k})\) for \(s\)~separable and purely inseparable, hence linear.
+\end{proof}
+
+\begin{defn}
+An element~\(\alpha\) is \emph{purely inseparable over~\(K\)} when \(\alpha\)~is algebraic over~\(K\) and \(\Irr(\alpha:K)\)~is purely inseparable.
+\end{defn}
+
+\begin{defn}
+An algebraic extension~\(E\) of~\(K\) is \emph{purely inseparable over~\(K\)} when every element of~\(E\) is purely inseparable over~\(K\).
+\end{defn}
+
+\noindent These definitions are compatible with those in the text. In particular:
+
+\begin{cor}
+An extension~\(E\) of~\(K\) is both separable and purely inseparable over~\(K\) if and only if \(E=K\). In particular if \(K\)~has characteristic~\(0\) or \(K\)~is finite, then \(K\)~is the only purely inseparable extension of~\(K\).
+\end{cor}
+
+\begin{cor}
+If \(K\)~has characteristic \(p\ne 0\) and \(E\)~is a purely inseparable extension of~\(K\) in~\(\ac{K}\), then
+\[E\subseteq K^{1/p^{\infty}}=\bigl\{\,\alpha\in\ac{K}\mid\alpha^{p^k}\in K\text{ for some }k\ge 0\,\bigr\}\]
+\end{cor}
 
 % References
 \begin{thebibliography}{0}
