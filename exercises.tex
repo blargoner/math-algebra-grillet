@@ -3,6 +3,8 @@
 \documentclass[letterpaper,12pt]{article}
 \usepackage{amsmath,amssymb,amsthm,enumitem,tikz-cd,fourier}
 
+\newcommand{\Z}{\mathbb{Z}}
+
 \newcommand{\divides}{|}
 \newcommand{\subgroupeq}{\le}
 \newcommand{\nsubgroupeq}{\trianglelefteq}
@@ -145,6 +147,16 @@ An extension~\(E\) of~\(K\) is both separable and purely inseparable over~\(K\) 
 If \(K\)~has characteristic \(p\ne 0\) and \(E\)~is a purely inseparable extension of~\(K\) in~\(\ac{K}\), then
 \[E\subseteq K^{1/p^{\infty}}=\bigl\{\,\alpha\in\ac{K}\mid\alpha^{p^k}\in K\text{ for some }k\ge 0\,\bigr\}\]
 \end{cor}
+
+\subsection*{Section~7}
+\begin{rmk}
+In the proof of Proposition~7.2, we obtain the polynomial identity
+\[\Phi(P)=A_m^n\,B_n^m\,\prod_{i,j}(R_i-S_j)\]
+in \(\Z[A_m,\,B_n,\,R_1,\ldots,R_m,\,S_1,\ldots,S_n]\). Substituting \(A_m\mapsto a_m\), \(B_n\mapsto b_n\), \(R_i\mapsto\alpha_i\), and \(S_j\mapsto\beta_j\) on both sides, we obtain
+\[D=a_m^n\,b_n^m\,\prod_{i,j}(\alpha_i-\beta_j)\]
+Indeed, let \(M\)~be the matrix in \(M_{m+n}(\,\Z[A_m,\ldots,A_0,\,B_n,\ldots,B_0]\,)\) defining~\(P\), so \(P=\det M\). Since \(\Phi\)~is a ring homomorphism, \(\Phi(P)=\det\Phi(M)\), where \(\Phi(M)\)~is the result of applying~\(\Phi\) to the entries of~\(M\). Since the determinant is a natural transformation, the result of the substitution above on~\(\Phi(P)\) is the determinant of the result of the substitution on the entries of~\(\Phi(M)\), which is~\(D\):
+\[\Phi(P)(a_m,b_n,\alpha_i,\beta_j)=\det\bigl[\Phi(M)(a_m,b_n,\alpha_i,\beta_j)\bigr]=D\]
+\end{rmk}
 
 \subsection*{Section~9}
 Temporarily, we say that an extension~\(E\) of~\(K\) is \emph{separable\sub{0}} if it is separable in the sense defined in Section~5, and \emph{separable\sub{1}} if it is separable in the sense defined in Section~9.
